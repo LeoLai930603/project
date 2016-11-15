@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mainpage</title>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="Chart.js"></script>
+      <script type="text/javascript"> 
+                                  var _plm = _plm || [];
+                                  _plm.push(['_btn', 43985]); 
+                                  _plm.push(['_loc','caon0728']);
+                                  _plm.push(['location', document.location.host ]);
+                                   (function(d,e,i) {
+                                  if (d.getElementById(i)) return;
+                                  var px = d.createElement(e);
+                                  px.type = 'text/javascript';
+                                  px.async = true;
+                                  px.id = i;
+                                  px.src = ('https:' == d.location.protocol ? 'https:' : 'http:') + '//widget.twnmm.com/js/btn/pelm.js?orig=en_ca';
+                                  var s = d.getElementsByTagName('script')[0];
+
+                                  var py = d.createElement('link');
+                                  py.rel = 'stylesheet'
+                                  py.href = ('https:' == d.location.protocol ? 'https:' : 'http:') + '//widget.twnmm.com/styles/btn/styles.css'
+
+                                  s.parentNode.insertBefore(px, s);
+                                  s.parentNode.insertBefore(py, s);
+                                })(document, 'script', 'plmxbtn');
+                        </script>
+      
+    <!--todolist css-->
+    <div>
+        <style type="text/css">
+                * {
+                    box-sizing: border-box;
+                }
+                
+                li{
+                    list-style:none;
+                }
+                /* Remove margins and padding from the list */
+                ul {
+                    margin: 0;
+                    padding: 0;
+                }
+
+
+                /* When clicked on, add a background color and strike out text */
+                ul li.checked {
+                    background: white;
+                    color: wheat;
+                    text-decoration: line-through;
+                }
+
+                /* Add a "checked" mark when clicked on */
+                ul li.checked::before {
+                    content: '';
+                    position: absolute;
+                    border-color: #fff;
+                    border-style: solid;
+                    border-width: 0 2px 2px 0;
+                    top: 10px;
+                    left: 16px;
+                    transform: rotate(45deg);
+                    height: 15px;
+                    width: 7px;
+                }
+
+                /* Style the close button */
+                .close {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    padding: 2px 4px 2px 4px
+                }
+                .close:hover {
+                    background-color: white;
+                    color: black;
+                }
+
+                /* Style the header */
+                .header {
+                    background-color: #f44336;
+                    padding: 30px 40px;
+                    color: white;
+                    text-align: center;
+                }
+
+                /* Clear floats after the header */
+                .header:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                /* Style the input */
+                input {
+                    border: none;
+                    width: 75%;
+                    padding: 10px;
+                    float: left;
+                    font-size: 16px;
+                    color: black;
+                }
+
+                /* Style the "Add" button */
+                .addBtn {
+                    padding: 10px;
+                    width: 25%;
+                    background: #d9d9d9;
+                    color: #555;
+                    float: left;
+                    text-align: center;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                .addBtn:hover {
+                    background-color: #bbb;
+                }
+        </style>
+      </div>
+    <!--pie chart-->
+    <div>
+          <script type="text/javascript">
+
+          // Load the Visualization API and the corechart package.
+          google.charts.load('current', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['A/C', 3],
+              ['TV', 1],
+              ['Light', 1],
+              ['Freezer', 1],
+              ['Others', 2]
+            ]);
+
+            // Set chart options
+            var options = {'title':'Electricity consumption',
+                           'width':310,
+                           'height':300};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
+      </div>
+    <!--Bubble chart-->
+    <div>
+           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', '2014', '2015'],
+          ['December',  210,      240],
+          ['March',  250,      230],
+          ['June',  190,       220],
+          ['September',  210,      209]
+        ]);
+
+        var options = {
+          title: 'Annual Electricity consumption',
+          hAxis: {title: 'Month',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+      }
+    </script>
+    </div>
+  </head>
+  <body>
+
+    <div class="container-fluid display-table">
+      <div class="row display-table-row">
+        <!-- side menu -->
+        <div class="col-md-2 col-sm-1 hidden-xs display-table-cell valign-top" id="side-menu">
+          <h1 class="hidden-xs hidden-sm">UZI</h1>
+         <ul>
+                <li class="link active">
+                    <a href="test.html">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                        <span class="hidden-sm hidden-xs">Dashboard</span>
+                    </a>
+                </li>
+                <li class="link">
+                    <a href="#collapse-post" data-toggle="collapse" aria-control="collapse-post">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <span class="hidden-sm hidden-xs">Social</span>
+                    </a>
+                    <ul class="collapse collapseable" id="collapse-post">
+                        <li><a href="http://www.youtube.com">Youtube</a></li>
+                        <li><a href="http://www.facebook.com">Facebook</a></li>
+                        <li><a href="http://www.instagram.com">Instagram</a></li>
+                    </ul>
+                </li>
+                
+                <li class="link">
+                    <a href="#collapse-comment1" data-toggle="collapse" aria-control="collapse-comment1">
+                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                        <span class="hidden-sm hidden-xs">Electricity consumption</span>
+                    </a>
+                    <ul class="collapse collapseable" id="collapse-comment1">
+                        <li>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bubble">Bubble Chart</button>
+                                <div class="modal fade" id="bubble" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div id="chart_div1" style="width: 100%; height: 500px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="link setting-btn">
+                    <a href="#collapse-comment" data-toggle="collapse" aria-control="collapse-comment">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        <span class="hidden-sm hidden-xs">Setting</span>
+                    </a>
+                    <ul class="collapse collapseable" id="collapse-comment">
+                        <li><a href="notification.html">Notification</a></li>
+                        <li><a href="privacy.html">Pravicy</a></li>
+                        <li><a href="update.html">Update</a></li>
+                    </ul>
+                </li>
+                <li class="link">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                        <span class="hidden-sm hidden-xs">Logout</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <!-- main content area -->
+        <div class="col-md-10 col-sm-11 display-table-cell valign-top">
+            <!--Main content header-->  
+            <div class="row">        
+                <header id="nav-header" class="clearfix">
+              <div class="col-md-5">
+                <!--navbar button-->
+                <nav class="navbar-default pull-left">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </nav>
+                <!--google search-->
+                <script>
+  (function() {
+    var cx = '018113835810954908486:odna81i6yiu';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+              </div>
+              <!--sigh up and log in-->
+              <div class="col-md-7">
+                <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal1">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </button>
+                  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><!--fade是渐变显示，-->
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="txtUID" class="sr-only">Username</label>
+                                        <input id="txtUID" type="text" class="form-control" placeholder="Username">
+                                    </div>  
+                                    <div class="form-group">
+                                        <label for="txtEmail" class="sr-only">Email</label>
+                                        <input id="txtEmail" type="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtAge" class="sr-only">Age</label>
+                                        <div>
+                                            <input type="number" class="form-control" id="txtAge" placeholder="Age">
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-group">
+                                        <label for="txtPWD" class="sr-only">Password</label>
+                                        <input id="txtPWD" type="password" class="form-control"
+                                            placeholder="********">
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label for="attachpic" class="control-label">Profile Pic</label>
+                                        <input id="attachpic" type="file" class="file">
+                                        <p class="help-block">Notice:Please upload your favourite Pofile Picture</p>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Agree the terms!
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+                   <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><!--fade是渐变显示，-->
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Log In</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="txtUID" class="sr-only">Username</label>
+                                        <input id="txtUID" type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtPWD" class="sr-only">Password</label>
+                                        <input id="txtPWD" type="password" class="form-control" placeholder="********">
+                                    </div>
+                                    <div>
+                                        <div>
+                                        <label class="col-md-9"><input type="checkbox">Rememer me!</label>
+                                        <a herf="">Forget Password?</a>
+                                        </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">Log In</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </header>
+            </div>
+            <!--Main content middle part-->
+            <div class="container main">
+            <div class="col-md-12">
+                <!--five main buttion-->
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg four" data-toggle="modal" data-target="#lightset">Light</button>
+                    <div class="modal fade modaltv" id="lightset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <ul>
+                                    <li>
+                                        <p>Bedroom</p>
+                                        <button type="button" class="btn btn-primary btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-primary btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-primary btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
+                                    </li>
+                                    <li>
+                                        <p>Living-room</p>
+                                        <button type="button" class="btn btn-primary btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-primary btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-primary btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-success btn-lg four" data-toggle="modal" data-target="#acset">A&#47;C</button>
+                    <div class="modal fade modaltv" id="acset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="btn btn-success btn-lg five pull-right" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
+                                <input type="number" placeholder="&#x2103;" class="acset">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button type="button" class="btn btn-warning btn-lg four" data-toggle="modal" data-target="#doorset">Door</button>
+                    <div class="modal fade modaltv" id="doorset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <ul>
+                                    <li>Main door</li>
+                                    <li>Bedroom 1</li>
+                                    <li>Bedroom 2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-danger btn-lg four" data-toggle="modal" data-target="#tvset">TV</button>
+                    <div class="modal fade modaltv" id="tvset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <ul>
+                                <li>
+                                    <button type="button" class="btn btn-danger btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                    <button type="button" class="btn btn-danger btn-lg five" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-danger btn-lg six" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></button>
+                                    <button type="button" class="btn btn-danger btn-lg six" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-volume-down" aria-hidden="true"></span></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <button type="button" class="btn btn-default btn-lg four" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                </div>
+            
+          
+            
+            
+                <!--Pie chart + to do list + weather-->
+                <div class="row">
+                    <!--pie chart-->
+                    <div class="col-md-4">
+                        <div id="chart_div" class="piechart  hidden-xs hidden-md"></div>
+                    </div>
+                   
+                    
+                    
+                    <!--to do list-->
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-d btn-lg todo hidden-md hidden-xs" data-toggle="modal" data-target="#todolist">To do list</button>
+                        <div class="modal fade" id="todolist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div id="myDIV" class="header">
+                                      <h2>My To Do List</h2>
+                                      <input type="text" id="myInput" class="pull-left" placeholder="Title...">
+                                      <span onclick="newElement()" class="addBtn">Add</span>
+                                    </div>
+                                    <ul id="myUL" >
+                                      <li>Hit the gym</li>
+                                      <li class="checked">Pay bills</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    
+                    
+                    
+                    <!--weather--
+                    <div class="col-md-4">
+                        <div id="plemx-root" class="weather hidden-xs hidden-md"></div> 
+                            <a href="http://www.theweathernetwork.com"></a>
+                              
+                    </div>
+                </div>-->
+                
+            
+
+
+                
+                <!--news-->
+                <div class="hidden-md hidden-xs">
+                         <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">New York Times</a></li>
+                        <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-toggle="tab">CBC News</a></li>
+                        <li role="presentation"><a href="#money" aria-controls="money" role="tab" data-toggle="tab">ABC News</a></li>
+
+                    </ul>
+
+                    
+                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                            <script type="text/javascript" src="http://output94.rssinclude.com/output?type=js&amp;id=1107400&amp;hash=4281b738bd0ea6e57d97dedb6a5a8ecf"></script>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="news">
+                            <script type="text/javascript" src="http://output94.rssinclude.com/output?type=js&amp;id=1107402&amp;hash=b13896e7feafc1b74293bf4785a81ed0"></script>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="money">
+                            <script type="text/javascript" src="http://output95.rssinclude.com/output?type=js&amp;id=1107403&amp;hash=1b2fbaa2535ce5fb33ed8cf35fa31c18"></script>
+                        </div>
+
+                    
+                    </div>
+              
+
+
+                </div>
+            </div>
+        
+
+            <!--Main content footer-->
+            <div class="row">
+            <footer id="admin-footer" class="clearfix">
+              <div class="pull-left"><b>Copyright </b>&copy; 2015</div>
+              <div class="pull-right">admin system</div>
+            </footer>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<!--JS and JQ import-->
+    
+    <script src="../../js/bootstrap.min.js" ></script> 
+    <script src="default.js"></script>
+    <!--to do list js-->
+    <div>
+        <script type="text/javascript">
+            // Create a "close" button and append it to each list item
+            var myNodelist = document.getElementById("myUL");
+            var myNodelist=myNodelist.childNodes;
+            console.log(myNodelist);
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+            if (myNodelist[i].tagName==='LI')
+            {
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              myNodelist[i].appendChild(span);
+            }
+            }
+
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+              }
+            }
+
+            // Add a "checked" symbol when clicking on a list item
+            var list = document.querySelector('ul');
+            list.addEventListener('click', function(ev) {
+              if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+              }
+            }, false);
+
+            // Create a new list item when clicking on the "Add" button
+            function newElement() {
+              var li = document.createElement("li");
+              var inputValue = document.getElementById("myInput").value;
+              var t = document.createTextNode(inputValue);
+              li.appendChild(t);
+              if (inputValue === '') {
+                alert("You must write something!");
+              } else {
+                document.getElementById("myUL").appendChild(li);
+              }
+              document.getElementById("myInput").value = "";
+
+
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              li.appendChild(span);
+
+              for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                  var div = this.parentElement;
+                  div.style.display = "none";
+                }
+              }
+
+            }
+        </script>
+    </div>
+  </body>
+</html>
